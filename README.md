@@ -213,6 +213,6 @@ All the above was to help a student or learner  gain basic skills on how to perf
 <img width="1894" height="101" alt="image" src="https://github.com/user-attachments/assets/eb957c67-4d1c-4a31-aecc-0220be927aba" />
 
 ## Conclusion of Docummentation
-Nmap tool is a great tool that help to identify active hosts, open/close ports through port scanning, service detection, OS fingerprinting and vulnerability detection ( using SMB enumeration). Is a first tool to utilised when conducting pentesting. On the other hand, Scapy is also a great tool that helps to sniff packets on a specific network interface, customise filtered packets sniffing, save packets, view readable summary of saved packets and also to inspect packets.
+Nmap tool is a great tool that help to identify active hosts, open/close ports through port scanning, service detection, OS fingerprinting and vulnerability detection ( using SMB enumeration). All opened ports identified will be closed by using firewall and all shared files will be removed to aviod anonymous access. On the other hand, Scapy is also a great tool that helps to sniff packets on a specific network interface, customise filtered packets sniffing, save packets, view readable summary of saved packets and also to inspect packets.
 Lets Keep exploring, practicing and both tools will be the key that unlock the next chapter of our ethical hacking journey.
 
