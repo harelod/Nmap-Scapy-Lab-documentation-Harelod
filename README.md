@@ -106,9 +106,10 @@ All the above was to help a student or learner  gain basic skills on how to perf
 
 ### From the above the server used is 10.0.2.3
 
-## 9. Packet Capture using TCPDUMP and Save
+## 9. Packet Capture using tcpdump
   ### Command: ``` sudo tcpdump -i eth0 -s 0 -w harelod.pcap ```
 ### Purpose: To capture all network trafic from a specific interface and save to a file name.
+### Additional Instruction: ``` After command above, Open www.google.com in browser so packets can be captured ```
 <img width="940" height="158" alt="image" src="https://github.com/user-attachments/assets/9815cd93-d1df-4922-8baf-5d9566ce3520" />
 
 ### Nb: Ctrl+ c  is used to stop packet capture
@@ -119,7 +120,7 @@ All the above was to help a student or learner  gain basic skills on how to perf
 ### Purpose: To verify if captured packet is saved to the specific file name
 <img width="320" height="102" alt="image" src="https://github.com/user-attachments/assets/3207108d-0396-4d9f-a331-a9f85b6e36af" />
 
-## 10. Alternate Packet Capture- Wireshark
+## 11. View Packets Capture on Wireshark
 ### Command: ``` wireshark ```
 ### Purpose: To use wireshark to load saved packet in aid of packet analysis (tcp, icmp & DNS)
 <img width="289" height="63" alt="image" src="https://github.com/user-attachments/assets/1faa479e-299b-4027-bd20-c93b5c3928ee" />
@@ -133,14 +134,85 @@ All the above was to help a student or learner  gain basic skills on how to perf
 ### The above shows PACKETS FILTRED BY tcp, DNS & ICMP
 
 
+
 # (B) Scapy Results & Docummentations
 ## 1. Root Privilege
-### 1st Command: ``` sudo su  ``` 
+### Command: ``` sudo su  ``` 
 ### Purpose: To gain privilege to access network in order to send, read and manipulate packets
 <img width="750" height="105" alt="image" src="https://github.com/user-attachments/assets/b73e5b30-ceab-4e7a-baca-0acec630f5f8" />
 
 ## 2. Initiate Scapy
-### 1st Command: ``` scapy  ``` 
+### Command: ``` scapy  ``` 
 ### Purpose: To start scapy tool
 <img width="1055" height="466" alt="image" src="https://github.com/user-attachments/assets/7e82b866-815c-48c0-b0a9-0ff9ff2b69e4" />
+
+## 3. Sniffing packets
+### 1st Command: ``` sniff()  ```
+### 2nd Command: ``` ping www.google.com  ```
+### 1st Instruction: 
+- Ping website in a new terminal 
+- Use Ctrl + c to stop ping website on terminal
+  
+  <img width="1110" height="683" alt="image" src="https://github.com/user-attachments/assets/037661ed-1c33-49f2-80b6-31ec85859d5a" />
+
+### 2nd Instruction:
+- Use Ctrl + c to stop packet sniff on terminal
+
+  <img width="624" height="58" alt="image" src="https://github.com/user-attachments/assets/368d12b5-0bf6-43f1-8a66-b4c0d0556f26" />
+
+## 4. Saving captured packets and Readable Summary of packets
+### 1st Command: ``` hare=_ ```
+### 2nd Command: ``` hare.summary() ```
+<img width="1908" height="752" alt="image" src="https://github.com/user-attachments/assets/874f0394-a72e-4728-81a7-1f46d48904b6" />
+<img width="1914" height="748" alt="image" src="https://github.com/user-attachments/assets/380292a1-3595-424b-9ebb-56e5191e7cf3" />
+
+## 5. Sniffing of Virtual Network bridge -Interface
+### 1st Command: ``` sniff(iface="br-internal") ```
+### Purpose: To sniff target interface
+
+### 2nd Command: ``` nmap 10.6.6.1/24 ```
+### Purpose: Identify available hosts
+<img width="903" height="556" alt="image" src="https://github.com/user-attachments/assets/2b0c7b5b-7653-4f2b-b532-80d89d6ffc2a" />
+<img width="786" height="755" alt="image" src="https://github.com/user-attachments/assets/56e69ea6-b185-4195-8c31-c0469777a996" />
+
+### 1st Instruction: 
+- open browser and type 10.6.6.23 into url
+<img width="940" height="433" alt="image" src="https://github.com/user-attachments/assets/9dbfa9ba-5c88-4229-abd1-961cf38065d3" />
+
+ ### 2nd Instruction:
+- Use Ctrl + c to stop virtual Network bridge packet sniffing
+  <img width="556" height="31" alt="image" src="https://github.com/user-attachments/assets/8a4ed1fe-268e-4eaa-8401-47b7a40a7d7a" />
+
+## 6. Saving captured packets (on 10.6.6.23) and Readable Summary
+### 1st Command: ``` hare2=_ ```
+### 2nd Command: ``` hare2.summary() ```
+<img width="808" height="756" alt="image" src="https://github.com/user-attachments/assets/bac3b632-6a5c-424e-9c7f-aa45d43aa38c" />
+<img width="782" height="725" alt="image" src="https://github.com/user-attachments/assets/7745e995-ac31-412b-8ce9-9a1552271981" />
+
+## 7. Filtered Packet Sniffing
+### 1st Command: ``` sniff(iface="br-internal" ,filter ="icmp",count=5) ```
+### Purpose: To sniff and filter only five (5) icmp packets only on a virtual Network bridge/interface
+
+### 2nd Command: ``` ping 10.6.6.23 ```
+### Purpose: To ping a specific host to aid packets capture
+
+### 1st Instruction: Use crtl + c to stop ping process 
+<img width="852" height="752" alt="image" src="https://github.com/user-attachments/assets/fadd8087-6d51-4977-973e-a6794018779a" />
+
+### 2nd Instruction: Use crtl + c to stop sniffing process 
+<img width="578" height="29" alt="image" src="https://github.com/user-attachments/assets/9ed7907b-12e5-42ba-8625-3513d19f9e42" />
+
+## 8. Saving ICMP filtered packets and Readable Summary
+### 1st Command: ``` hare3=_ ```
+### 2nd Command: ``` hare3.summary() ```
+<img width="816" height="166" alt="image" src="https://github.com/user-attachments/assets/c8e4c9e6-6d6f-4e68-8f2d-12cc0b5d47cc" />
+
+## 9. Packet Inspection
+### 1st Command: ``` hare3[3] ```
+### Purpose: To inspect a specific saved packet (hare3)
+<img width="1894" height="101" alt="image" src="https://github.com/user-attachments/assets/eb957c67-4d1c-4a31-aecc-0220be927aba" />
+
+## Conclusion of Docummentation
+Nmap tool is a great tool that help to identify active hosts, open/close ports through port scanning, service detection, OS fingerprinting and vulnerability detection ( using SMB enumeration). Is a first tool to utilised when conducting pentesting. On the other hand, Scapy is also a great tool that helps to sniff packets on a specific network interface, customise filtered packets sniffing, save packets, view readable summary of saved packets and also to inspect packets.
+Lets Keep exploring, practicing and both tools will be the key that unlock the next chapter of our ethical hacking journey.
 
