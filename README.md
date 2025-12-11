@@ -1,4 +1,4 @@
-# Nmap-Scapy-Lab-documentation-Harelod
+# Nmap-Scapy-Lab-Documentation-Harelod
 This focuses on the utilization of Nmap and Scapy tools during our instructor lead classes at ParoCyber.
 
 ## 1. Objective of Lab
