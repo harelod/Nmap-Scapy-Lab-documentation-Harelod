@@ -19,8 +19,8 @@ The main purpose of this lab was to re-run a practical training on the use of Nm
 All the above was to help a student or learner  gain basic skills on how to perform active reconnaissance, enumeration, sniffing and analysis of captured packets.
 
 ## 2. Setup Environment
- - Vitual Machine:
- - Operating System:
+ - Vitual Machine: Oracle Virtual Box
+ - Operating System: Ethical-Hack- Kali Linux(Netacad)
  - Tools: Nmap & Scapy
  - Network Range: 10.6.6.0/24
  - Target Host: 10.6.6.23
