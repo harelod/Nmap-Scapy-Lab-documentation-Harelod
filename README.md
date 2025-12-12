@@ -77,7 +77,7 @@ All the above was to help a student or learner  gain basic skills on how to perf
 ### Purpose: To list SMB share (all shared folders) on an SMB server of a target machine, ascertain its accessibility (anonymous/authenticated access,read/write)
 <img width="922" height="862" alt="image" src="https://github.com/user-attachments/assets/b17e17a8-c3ac-4251-87e0-bc8224ebf7d0" />
 
-### Three (3) folders can been seen as shared on the target machine which can be accessed anonymously
+### Three (3) folders can be seen as shared on the target machine which can be accessed anonymously
 
 ## 6. Anonymous Login
 ### Command: ``` smbclient //10.6.6.23/print$ -N ```
